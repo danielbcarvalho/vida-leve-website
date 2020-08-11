@@ -1,0 +1,172 @@
+:root {
+    --main-pink-color: rgb(238, 102, 102);
+    --main-dark-color: #3f3e3e;
+    --light-pink-color:  rgba(238, 102, 102, 0.4);
+  }
+body {
+    font-family: 'lora', sans-serif;
+}
+
+/* Title of the Cards */
+h1 {
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    padding-bottom: 5%;
+
+}
+
+
+/* Pink Icons */
+i.iconP{
+	color: var(--main-pink-color);
+}
+
+
+span.byAline {
+    font-family: 'Dancing Script', cursive;
+	font-size: 2rem;
+    line-height: 0;
+
+} 
+
+#alineLogo {
+	position: static;
+	border: 2px solid white;
+	border-radius: 50%;
+	width: 35%;
+	justify-content:center;
+}
+
+.form-control::-webkit-input-placeholder {
+  color: #bbb;
+  font-family: cursive;
+}
+
+#mainNavbar {
+  background: var(--main-dark-color);
+  font-weight: 100;  
+  border-bottom: 4px solid var(--main-pink-color);
+  padding: 0;
+}
+
+.nb a {
+    font-size: 1.1rem;
+    color: white;
+    border-right: 1px solid rgb(51, 51, 51);
+}
+
+.nb a:hover {
+  color: white;
+  background-color:  var(--main-pink-color); 	
+}
+
+#form:hover input{
+    background-color: white;
+  }
+
+input.form-control {
+    background-color: #3f3e3e;
+    height: 30px;
+
+}
+
+.scrolled input{
+    background-color: white;
+}
+
+
+#gallery {
+    padding-top: 3%;
+	background-color: rgba(242, 242, 242, 0.5);
+
+}
+
+.social {
+    max-width: 100%;
+    margin-left: 50%;
+    position: relative;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.7s;
+  }
+  
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
+  }
+  
+.card img {
+    max-width: 100%;
+	height: 50%;
+	vertical-align: bottom;
+  }
+  
+#footer {
+	color: rgba(83, 83, 83, 0.9);
+}
+#footer a{
+	color: grey;
+}
+#footer a:hover{
+	color: green;
+	text-decoration: none;
+}
+
+/* Main Menu Scrolled */
+#mainNavbar.navbar.scrolled {
+    background:  rgba(231, 229, 229, 0.8);
+    transition: background 500ms;
+    border-bottom: 2px solid var(--light-pink-color);
+
+  }
+
+/* Bottons of Main Menu Scrolled */
+#mainNavbar.navbar.scrolled a {
+    color: var(--main-pink-color);
+    border-right: none;
+  }
+
+#mainNavbar.navbar.scrolled a:hover {
+    color: white;
+    background-color: var(--light-pink-color);
+  }
+
+h5.read {
+	color: rgb(92, 91, 91);
+	font-size: 1rem;
+}
+
+.pcard {
+    display: -webkit-box;
+    /* max-width: 200px; */
+    -webkit-box-orient: vertical;
+	-webkit-line-clamp: 8;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+p.pcard {
+    display: -webkit-box;
+    /* max-width: 200px; */
+    -webkit-box-orient: vertical;
+	-webkit-line-clamp: 5;
+    overflow: hidden;
+    text-overflow: ellipsis;
+	padding-bottom: 0;
+}
+
+@media (max-width: 1200px) {
+    .brand {
+        line-height: 0;
+        font-size: 2rem;
+    }
+    
+    span.byAline {
+        font-family: 'Dancing Script', cursive;
+        font-size: 1.5rem;
+        line-height: 0;
+    } 
+    h1 {
+        font-size: 2rem;
+    }
+}
