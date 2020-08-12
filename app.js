@@ -27,4 +27,4 @@ app.get("/index", (req, res) => res.render("index"));
 
 
 //SERVER LISTENER
-app.listen(8080, () => console.log("The server has started..."));
+app.listen(8080, 'localhost', () => console.log("The server has started..."));
