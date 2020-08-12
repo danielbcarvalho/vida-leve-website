@@ -1,0 +1,50 @@
+  <!-- ##### Footer Area Start ##### -->
+  <footer class="footer-area">
+    <div class="container-fluid h-100">
+        <div class="row h-100">
+            <div class="col-12 h-100 d-flex flex-wrap align-items-center justify-content-between" id="footer">
+                <!-- Footer Logo -->
+                <div class="footer-logo">
+                    <a href="index.html"><img src="imgs/vidalevelogo.png" alt=""></a>
+                </div>
+                <div>
+                    <p>Copyright &copy;
+                        <script>document.write(new Date().getFullYear());</script> All rights reserved | Website
+                        developed by
+                        <a href="https://github.com/daniel30-07" target="_blank" class="pr-2">Daniel Carvalho</a>
+                        <a href="https://github.com/daniel30-07" target="_blank"><i
+                                class="fa fa-github fa-2x px-2"></i></a>
+                        <a href="https://www.linkedin.com/in/daniel-carvalho-0a4916122/" target="_blank"><i
+                                class="fa fa-linkedin fa-2x px-2"></i></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+
+<!-- Script menu 2 scrolled -->
+<script>
+    $(function () {
+        $(document).scroll(function () {
+            var $nav = $("#mainNavbar");
+            $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+        });
+    });
+</script>
+
+</body>
+
+</html>
