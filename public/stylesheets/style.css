@@ -149,6 +149,10 @@ input.form-control {
     background-color: var(--light-pink-color);
   }
 
+#formNew.container {
+    width: 50%;
+}
+
 h5.read {
 	color: rgb(92, 91, 91);
 	font-size: 1rem;

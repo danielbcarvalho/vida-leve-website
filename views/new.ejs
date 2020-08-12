@@ -1,0 +1,24 @@
+  
+<%- include("partials/header") %>
+
+<div class="container p-5 my-5 bg-light" id="formNew"> 
+<form>
+   <h2>Nova Postagem</h2>
+   <div class="form-group">
+      <label for="">Título</label>
+      <input type="text" name="postage[title]" class="form-control" id="" placeholder="título">
+   </div>
+   <div class="form-group">
+     <label for="">Imagem</label>
+     <input type="text" name="postage[image]" class="form-control" id="" placeholder="local da imagem">
+   </div>
+
+  <div class="form-group">
+    <label for="">Conteúdo da Postagem</label>
+    <textarea name="postage[body]" class="form-control" id="" rows="6"></textarea>
+  </div>
+    <input class="button" type="submit" name="" id="">
+</form>
+</div>
+
+<%- include("partials/footer") %>

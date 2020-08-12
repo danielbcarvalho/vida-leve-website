@@ -25,6 +25,16 @@ const VidaLeve = mongoose.model("Postage", vidaLeveSchema);
 app.get("/", (req, res) => res.redirect("/index"));
 app.get("/index", (req, res) => res.render("index"));
 
+// NEW ROUTE
+app.get("/index/new", (req, res) => res.render("new"));
+
+//CREATE ROUTE  
+app.post("/index", (req, res) => {
+    //create blog
+    Postage.create(req.body.postage)
+        .then((newPostage) => res.redirect("/index"))
+        .catch((error) => res.render("new"))
+})
 
 //SERVER LISTENER
 app.listen(8080, 'localhost', () => console.log("The server has started..."));
