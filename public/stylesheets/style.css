@@ -1,21 +1,12 @@
 :root {
-    --main-pink-color: rgb(238, 102, 102);
+    --main-pink-color: rgb(233,129,117);
     --main-dark-color: #3f3e3e;
-    --light-pink-color:  rgba(238, 102, 102, 0.4);
+    --light-pink-color:  rgba(233, 129, 117, 0.4);
   }
 body {
     font-family: 'lora', sans-serif;
     background-color: rgba(238, 102, 102, 0.1);
 }
-
-/* Title of the Cards */
-h1 {
-    font-family: 'Pacifico', cursive;
-    text-align: center;
-    padding-bottom: 5%;
-
-}
-
 
 /* Pink Icons */
 i.iconP{
@@ -76,26 +67,27 @@ span.byAline {
     color: var(--main-pink-color);
 }
 
-#form:hover input{
-    background-color: white;
-  }
-
-input.form-control {
+#formMenu {
     background-color: #3f3e3e;
     height: 30px;
-
 }
 
-.scrolled input{
+#formMenu:hover {
     background-color: white;
 }
-
 
 #gallery {
     padding-top: 3%;
 	background-color: white;
-	padding-bottom: 3%;
+    padding-bottom: 3%;
+}
 
+/* Title of the Cards */
+#gallery h1 {
+    font-family: 'Pacifico', cursive;
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 3%;
 }
 
 .social {
@@ -132,11 +124,11 @@ input.form-control {
 
 /* Main Menu Scrolled */
 #mainNavbar.navbar.scrolled {
-    background:  rgba(231, 229, 229, 0.8);
+    background-color: var(--light-pink-color);
+    /* background:  rgba(231, 229, 229, 0.8); */
     transition: background 500ms;
     border-bottom: 2px solid var(--light-pink-color);
-
-  }
+      }
 
 /* Bottons of Main Menu Scrolled */
 #mainNavbar.navbar.scrolled a {
@@ -145,9 +137,13 @@ input.form-control {
   }
 
 #mainNavbar.navbar.scrolled a:hover {
-    color: white;
+    color: var(--light-pink-color);
     background-color: var(--light-pink-color);
-  }
+}
+
+#mainNavbar.navbar.scrolled input{
+    background-color: white;
+}
 
 #formNew.container {
     width: 50%;
