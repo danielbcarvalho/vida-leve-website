@@ -40,7 +40,7 @@ app.get("/index", (req, res) => {
     });
 });
 
-// NEW ROUTE
+//NEW ROUTE
 app.get("/index/new", (req, res) => res.render("new"));
 
 //CREATE ROUTE  
@@ -50,6 +50,17 @@ app.post("/index", (req, res) => {
         .then((newPostage) => res.redirect("/index"))
         .catch((error) => res.render("new"))
 })
+
+//SHOW ROUTE    
+app.get("/index/show", (req, res) => {
+    VidaLeve.find({}, (err, postages) => {
+        if(err) {
+            console.log("log...", err);
+        } else {
+        res.render("show", {postages: postages});
+        }  
+    });
+});
 
 //SERVER LISTENER
 app.listen(8080, 'localhost', () => console.log("The server has started..."));
