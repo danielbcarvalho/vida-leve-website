@@ -1,8 +1,7 @@
-  
 <%- include("partials/header") %>
 
 <div class="container p-5 my-5 bg-light" id="formNew"> 
-<form>
+<form action="/index" method="POST">
    <h2>Nova Postagem</h2>
    <div class="form-group">
       <label for="">Título</label>
@@ -12,7 +11,10 @@
      <label for="">Imagem</label>
      <input type="text" name="postage[image]" class="form-control" id="" placeholder="local da imagem">
    </div>
-
+   <div class="form-group">
+    <label for="">Categoria</label>
+    <input type="text" name="postage[category]" class="form-control" id="" placeholder="categoria">
+  </div>
   <div class="form-group">
     <label for="">Conteúdo da Postagem</label>
     <textarea name="postage[body]" class="form-control" id="" rows="6"></textarea>

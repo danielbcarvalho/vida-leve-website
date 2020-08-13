@@ -4,174 +4,25 @@
         <div class="container bg-light" id="gallery">
             <h1>Receitas Fitness e Lifestyle!!!</h1>
             <div class="card-deck">
-                <div class="col-lg-4 mb-4">
-                    <div class="card" style="height: 43rem">
-                        <img class="card-img-top" src="../imgs/cake.jpg" alt="">
-                        <div class="card-body">
-                            <h5 class="card-title">Muffin de Cenoura</h5>
-                            <p class="card-text pcard">Ingredientes:
-                                🥕4 ovos;
-                                🥕½ x (mal cheia) óleo de coco @copra_alimentos;
-                                🥕3 cenouras grandes cortadas em cubos;
-                                🥕1 cs adoçante culinário;
-                                🥕2 cs açúcar demerara;
-                                🥕1 x farinha de aveia sem glutém @vivamuitomaissaudavel;
-                                🥕1 x farinha de amêndoa;
-                                🥕1 cs fermento em pó;
-
-                                Preparo:
-                                Bata no liquidificador as cenouras, óleo, ovos, açúcar e adoçante. Misture num bowl, a
-                                farinha de aveia, de amendoas, fermento e a parte líquida. Incorpore delicadamente.
-                                Forminhas de cupcake, forno 180°C. Faça o teste do palito, aproximadamente 20 min.
-                                .
-                                .
-                                Renderam: 18.
-
-                                Cobertura:
-                                🍫Alguns quadradinhos de chocolate 70‰ derretido
-                                🍫Gotinha de óleo de coco
-                                .
-                                .
-                                Derreta o chocolate em banho maria e depois misture muito bem óleo de coco.
-
-                                Congelei alguns sem cobertura para os próximos dias 😉
-                                .
-                                📎 Os produtos naturais, a @vivamuitomaissaudavel está entregando em casa. Tem cupom de
-                                10‰ pra quem me segue!
-                                .
-                            </p>
-                        </div>
-                        <a href="#!" class="d-flex flex-row-reverse pr-4 text-secondary">
-                            <h5 class="read">Continue lendo <i class="fas fa-angle-double-right"></i></h5>
-                        </a>
-                        <div class="d-flex justify-content-between p-3">
-                            <a href="" class="btn btn-outline-primary btn-md border-0"><i
-                                    class="iconP fas fa-share-alt-square fa-2x"></i></a>
-                            <a href="" class="btn btn-outline-danger btn-md border-0"><i
-                                    class="iconP far fa-heart fa-2x"></i></a>
+                <% postages.forEach((postage) => { %> 
+                    <div class="col-lg-4 mb-4">
+                        <div class="card" style="height: 43rem">
+                            <img class="card-img-top" src="<%= postage.image %>" alt="image">
+                            <div class="card-body">
+                                <h3 class="card-title"><%= postage.title %></h3>
+                                <p class="card-text pcard"><%= postage.body %></p>
+                            </div>
+                            <a href="#!" class="d-flex flex-row-reverse pr-4 text-secondary">
+                                <h5 class="read">Continue lendo <i class="fas fa-angle-double-right"></i></h5>
+                            </a>
+                            <div class="d-flex justify-content-between p-3">
+                                <a href="" class="btn btn-outline-primary btn-md border-0"><i
+                                        class="iconP fas fa-share-alt-square fa-2x"></i></a>
+                                <a href="" class="btn btn-outline-danger btn-md border-0"><i
+                                        class="iconP far fa-heart fa-2x"></i></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card" style="height: 43rem">
-                        <img class="card-img-top" src="../imgs/pilates2.jpg" alt="">
-                        <div class="card-body">
-                            <h5 class="card-title">Pilates</h5>
-                            <p class="card-text pcard">No que o pilates me ajuda?
-                                No preparo físico, na correção da postura, e principalmente no emocional... Lá respiro,
-                                encontro tempo pra me entender, e pra me corrigir... Encontro tempo pra apreciar um belo
-                                por do sol, um pé de ipê-roxo vivo e florido, e percebo que mesmo nos momentos atuais de
-                                incerteza, a beleza, a vida e as amizades existem, devem ser apreciadas, e se
-                                fortalecem...
-                            </p>
-                        </div>
-                        <a href="#!" class="d-flex flex-row-reverse pr-4 text-secondary">
-                            <h5 class="read">Continue lendo <i class="fas fa-angle-double-right"></i></h5>
-                        </a>
-                        <div class="d-flex justify-content-between p-3">
-                            <a href="" class="btn btn-outline-primary btn-md border-0"><i
-                                    class="iconP fas fa-share-alt-square fa-2x"></i></a>
-                            <a href="" class="btn btn-outline-danger btn-md border-0"><i
-                                    class="iconP far fa-heart fa-2x"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card" style="height: 43rem">
-                        <img class="card-img-top" src="../imgs/rockinrio.jpg" alt="">
-                        <div class="card-body">
-                            <h5 class="card-title">Rock in Rio</h5>
-                            <p class="card-text pcard">Dia de rock Baby... 💀IRON MAIDEN 💀SCORPIONS 💀SLAYER
-                                💀SEPULTURA... Fora o que nem deu pra ver 😪... 💀🤘🤘🤘🦂
-                                #rockinrio #rockinrio2019 #errejota #cidadeolímpica #riodejaneiro #riodejaneiroinstagram
-                                #riodejaneirotrip
-                            </p>
-                        </div>
-                        <a href="#!" class="d-flex flex-row-reverse pr-4 text-secondary">
-                            <h5 class="read">Continue lendo <i class="fas fa-angle-double-right"></i></h5>
-                        </a>
-                        <div class="d-flex justify-content-between p-3">
-                            <a href="" class="btn btn-outline-primary btn-md border-0"><i
-                                    class="iconP fas fa-share-alt-square fa-2x"></i></a>
-                            <a href="" class="btn btn-outline-danger btn-md border-0"><i
-                                    class="iconP far fa-heart fa-2x"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card" style="height: 43rem">
-                        <img class="card-img-top" src="../imgs/books2.jpg" alt="">
-                        <div class="card-body">
-                            <h5 class="card-title">Livros: O Diário de Annee Frank</h5>
-                            <p class="card-text pcard">O Diário de Anne Frank é um livro escrito por Anne Frank entre 12
-                                de junho de 1942 e 1.º
-                                de agosto de 1944 durante a Segunda Guerra Mundial. É conhecido por narrar momentos
-                                vivenciados pelo grupo de judeus
-                                confinados em um esconderijo durante a ocupação nazista dos Países Baixos.
-                            </p>
-
-                        </div>
-                        <a href="#!" class="d-flex flex-row-reverse pr-4 text-secondary">
-                            <h5 class="read">Continue lendo <i class="fas fa-angle-double-right"></i></h5>
-                        </a>
-                        <div class="d-flex justify-content-between p-3">
-                            <a href="" class="btn btn-outline-primary btn-md border-0"><i
-                                    class="iconP fas fa-share-alt-square fa-2x"></i></a>
-                            <a href="" class="btn btn-outline-danger btn-md border-0"><i
-                                    class="iconP far fa-heart fa-2x"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card" style="height: 43rem">
-                        <img class="card-img-top" src="../imgs/yogurt.jpg" alt="">
-                        <div class="card-body">
-                            <h5 class="card-title">Iogurte Caseiro com Granola</h5>
-                            <p class="card-text pcard">Feriadão, com mais uma opção para acompanhar miha granolinha
-                                caseira deliciosa
-                                . 🍇1 banana nanica madura (pode ser congelada);
-                                🍇 10 Amoras congeladas;
-                                🍇 4 cs creme de leite;
-                                🍇 3 cs leite em pó;
-                                🍇 1 cs açúcar demerara
-                                🍇100 ml água (ou leite);
-                            </p>
-                        </div>
-                        <a href="#!" class="d-flex flex-row-reverse pr-4 text-secondary">
-                            <h5 class="read">Continue lendo <i class="fas fa-angle-double-right"></i></h5>
-                        </a>
-                        <div class="d-flex justify-content-between p-3">
-                            <a href="" class="btn btn-outline-primary btn-md border-0"><i
-                                    class="iconP fas fa-share-alt-square fa-2x"></i></a>
-                            <a href="" class="btn btn-outline-danger btn-md border-0"><i
-                                    class="iconP far fa-heart fa-2x"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <div class="card" style="height: 43rem">
-                        <img class="card-img-top" src="../imgs/pasta.jpg" alt="">
-                        <div class="card-body">
-                            <h5 class="card-title">Macarronada a Bolonhesa</h5>
-                            <p class="pcard card-text">Macarronada a bolonhesa... Macarrão glutém free, molho caseiro,
-                                carninha temperadinha... Delícia!
-                                durante a Segunda Guerra Mundial. É conhecido por narrar momentos vivenciados pelo grupo
-                                de judeus confinados em um esconderijo durante a ocupação nazista dos
-                                Tem o preparo da carne nos destaques! Já mostrei este molho também.
-                            </p>
-                        </div>
-                        <a href="#!" class="d-flex flex-row-reverse pr-4 text-secondary">
-                            <h5 class="read">Continue lendo <i class="fas fa-angle-double-right"></i></h5>
-                        </a>
-                        <div class="d-flex justify-content-between p-3">
-                            <a href="" class="btn btn-outline-primary btn-md border-0"><i
-                                    class="iconP fas fa-share-alt-square fa-2x"></i></a>
-                            <a href="" class="btn btn-outline-danger btn-md border-0"><i
-                                    class="iconP far fa-heart fa-2x"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                <% }) %> 
 
 <%- include("partials/footer") %> 
