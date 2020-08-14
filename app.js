@@ -52,15 +52,13 @@ app.post("/index", (req, res) => {
 })
 
 //SHOW ROUTE    
-app.get("/index/show", (req, res) => {
-    VidaLeve.find({}, (err, postages) => {
-        if(err) {
-            console.log("log...", err);
-        } else {
-        res.render("show", {postages: postages});
-        }  
-    });
-});
+app.get("/index/:id", (req, res) => {
+    VidaLeve.findById(req.params.id)
+        .then(foundPostage => {
+            res.render("show", {postage: foundPostage});
+        })
+        .catch((error) => res.redirect("/index"))
+})
 
 //SERVER LISTENER
 app.listen(8080, 'localhost', () => console.log("The server has started..."));
