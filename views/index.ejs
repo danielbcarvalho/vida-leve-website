@@ -9,7 +9,7 @@
                 <img class="card-img-top" src="<%= postage.image %>" alt="image">
                 <div class="card-body">
                     <h3 class="card-title"><%= postage.title %></h3>
-                    <p class="card-text pcard"><%= postage.body %></p>
+                    <p class="card-text pcard"><%- postage.body.substring(0, 400) %></p>
                 </div>
                 <a href="/index/<%= postage._id %>" class="d-flex flex-row-reverse pr-4 text-secondary">
                     <h5 class="read">Continue lendo <i class="fas fa-angle-double-right"></i></h5>
