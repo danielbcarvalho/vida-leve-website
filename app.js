@@ -60,5 +60,36 @@ app.get("/index/:id", (req, res) => {
         .catch((error) => res.redirect("/index"))
 })
 
+//EDIT ROUTE 
+app.get("/index/:id/edit", (req, res) => {
+    VidaLeve.findById(req.params.id)
+        .then(editPostage => {
+            res.render("edit", {postage: editPostage})
+        })
+        .catch((error) => res.redirect("/index"))
+}) 
+
+//UPDATE ROUTE
+app.put("/index/:id", (req, res) => {
+    VidaLeve.findByIdAndUpdate(req.params.id, req.body.postage)
+        .then((updatedPostage) => {
+            res.redirect("/index/" + req.params.id)
+        })
+        .catch(error => {
+            res.redirect("/index")
+        })
+})
+
+// DELETE ROUTE
+app.delete("/index/:id", (req, res) => {
+    VidaLeve.findByIdAndRemove(req.params.id)
+        .then(() => {
+            res.redirect("/index")
+        })
+        .catch((error) => {
+            res.redirect("/index")
+        })
+})
+
 //SERVER LISTENER
 app.listen(8080, 'localhost', () => console.log("The server has started..."));
