@@ -3,13 +3,15 @@ const express = require("express"),
     mongoose = require("mongoose"),
     bodyParser = require("body-parser"),
     app = express();
+    uri = "mongodb+srv://vidaleve:vidaleve@vida-leve.d9con.mongodb.net/vida_leve?retryWrites=true&w=majority"
 
-mongoose.connect('mongodb://localhost:27017/vida_leve', {
+mongoose.connect(uri || 'mongodb://localhost:27017/vida_leve', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
     .then(() => console.log('Connected to DB!'))
     .catch(error => console.log(error.message));
+
 //APP CONFIG
 app.set("view engine", "ejs");
 app.use(express.static("public"));
