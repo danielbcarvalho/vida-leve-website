@@ -1,11 +1,11 @@
 <%- include("partials/header") %>
 <!-- Galeria -->
-<div class="container bg-light" id="gallery">
+<div class="container bg-light p-5 card" id="gallery">
     <h1 class="card-title">Receitas Fitness e Lifestyle!!!</h1>
     <div class="card-deck">
         <% postages.forEach((postage) => { %>
         <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card" style="height: 43rem">
+            <div class="card card-hover" style="height: 43rem">
                 <img class="card-img-top" src="<%= postage.image %>" alt="image">
                 <div class="card-body">
                     <h3 class="card-title"><%= postage.title %></h3>
