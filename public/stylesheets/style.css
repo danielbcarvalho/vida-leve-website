@@ -63,6 +63,10 @@ span.byAline {
   background-color:  var(--main-pink-color); 	
 }
 
+.aMenuActive {
+    background-color: yellow;
+  }
+
 #mainNavbar.navbar a{
     color: var(--light-pink-color);
 }
@@ -116,8 +120,6 @@ span.byAline {
 
 #footer {
     color: rgba(83, 83, 83, 0.9);
-    /* border-top: 1px solid rgba(83, 83, 83, 0.1); */
-    box-shadow: 1px 12px 10px 10px rgba(0,0,0,0.2);
 }
 #footer a {
 	color: grey;
