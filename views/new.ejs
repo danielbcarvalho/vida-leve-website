@@ -1,7 +1,7 @@
 <%- include("partials/header") %>
 
-<div class="container bg-light py-5">
-<div class="container p-5 bg-white" id="formNew">
+<div class="container bg-white py-5 card">
+<div class="container p-5 bg-white card card-hover" id="formNew">
   <form action="/index" method="POST">
     <h2>Nova Postagem</h2>
     <div class="form-group">
@@ -10,7 +10,7 @@
     </div>
     <div class="form-group">
       <label for="">Imagem</label>
-      <input type="text" name="postage[image]" class="form-control" id="" placeholder="local da imagem">
+      <input type="text" name="postage[image]" class="form-control" value="/imgs/" id="" placeholder="local da imagem">
     </div>
     <div class="form-group">
       <label for="">Categoria</label>

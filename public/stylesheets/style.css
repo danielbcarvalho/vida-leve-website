@@ -59,6 +59,10 @@ span.byAline {
   background-color:  var(--main-pink-color); 	
 }
 
+.aMenuActive {
+    background-color: yellow;
+  }
+
 #mainNavbar.navbar a{
     color: var(--light-pink-color);
 }
@@ -101,7 +105,7 @@ span.byAline {
     transition: 0.7s;
   }
   
-.card:hover {
+.card-hover:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
   }
   
@@ -113,8 +117,6 @@ span.byAline {
 
 #footer {
     color: rgba(83, 83, 83, 0.9);
-    border-top: 1px solid rgba(83, 83, 83, 0.1);
-    
 }
 #footer a {
 	color: grey;

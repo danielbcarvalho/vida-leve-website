@@ -41,6 +41,16 @@ app.get("/index", (req, res) => {
         }  
     });
 });
+//get given category from db
+app.get("/:category", (req, res) => {  
+    VidaLeve.find({category: { $in: [req.params.category]}}, (err, postages) => {
+        if(err) {
+            console.log("Categoria não encontrada", err);
+        } else {
+            res.render("index", {postages: postages});
+        }  
+    });
+});
 
 //NEW ROUTE
 app.get("/index/new", (req, res) => res.render("new"));
