@@ -1,7 +1,9 @@
 <%- include("partials/header") %>
 
+
 <% function titleIndex(title) { %>
-<%    let string = "Receitas Fitness e Lifestyle!!!"; %>
+<%    let string = postages.title %>
+<%    if(title == "Receitas Fitness e Lifestyle!!!") return string; %> 
 <%    if(title == "receitas") string = "Receitas"; %> 
 <%    if(title == "viagens") string = "Viagens"; %> 
 <%    if(title == "corpo_e_mente") string = "Corpo e Mente"; %> 
