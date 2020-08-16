@@ -26,8 +26,10 @@ const vidaLeveSchema = new mongoose.Schema({
     category: String,
     created: { type: Date, default: Date.now }
 });
-const VidaLeve = mongoose.model("Postage", vidaLeveSchema);
+//vidaLeveSchema.index({title: 'text', body: 'text', category: 'text'});
+vidaLeveSchema.index({'$**': 'text'});
 
+const VidaLeve = mongoose.model("Postage", vidaLeveSchema);
 //Routes
 
 //INDEX
@@ -44,10 +46,9 @@ app.get("/index", (req, res) => {
 });
 
 //search
-app.get("/index/search", (req, res) => {
-      let search = req.params;
-      console.log("search app", search);
-      VidaLeve.find({}, (err, postages) => {
+app.post("/index/search", (req, res) => {
+      let search = req.body.search;
+      VidaLeve.find({$text: {$search: search}},(err, postages) => { 
         const title = "Postagens encontradas";
         if(err) {
             console.log("log...", err);
