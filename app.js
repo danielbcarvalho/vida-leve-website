@@ -33,7 +33,6 @@ const VidaLeve = mongoose.model("Postage", vidaLeveSchema);
 //INDEX
 app.get("/", (req, res) => res.redirect("/index"));
 app.get("/index", (req, res) => {
-    console.log("index app");
     VidaLeve.find({}, (err, postages) => {
         const title = "Receitas Fitness e Lifestyle!!!";
         if(err) {
@@ -44,7 +43,10 @@ app.get("/index", (req, res) => {
     });
 });
 
-app.get("/index/search/:search", (req, res) => {
+//search
+app.get("/index/search", (req, res) => {
+      let search = req.params;
+      console.log("search app", search);
       VidaLeve.find({}, (err, postages) => {
         const title = "Postagens encontradas";
         if(err) {
