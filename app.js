@@ -9,7 +9,7 @@ mongoose.connect(uri || 'mongodb://localhost:27017/vida_leve', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
-    .then(() => console.log('Connected to DB!'))
+    .then(() => console.log('Connected to Atlas Mongodb!'))
     .catch(error => console.log(error.message));
 
 //APP CONFIG
@@ -34,22 +34,24 @@ const VidaLeve = mongoose.model("Postage", vidaLeveSchema);
 app.get("/", (req, res) => res.redirect("/index"));
 app.get("/index", (req, res) => {
     VidaLeve.find({}, (err, postages) => {
+        const title = "Receitas Fitness e Lifestyle!!!";
         if(err) {
             console.log("log...", err);
         } else {
-        res.render("index", {postages: postages});
+        res.render("index", {postages: {postages, title}});
         }  
     });
 });
 //get given category from db
-app.get("/:category", (req, res) => {  
+app.get("/index/:category", (req, res) => { 
     VidaLeve.find({category: { $in: [req.params.category]}}, (err, postages) => {
+        const title = [req.params.category];
         if(err) {
             console.log("Categoria não encontrada", err);
         } else {
-            res.render("index", {postages: postages});
+            res.render("index", {postages: {postages, title}});
         }  
-    });
+    });  
 });
 
 //NEW ROUTE
@@ -64,7 +66,7 @@ app.post("/index", (req, res) => {
 })
 
 //SHOW ROUTE    
-app.get("/index/:id", (req, res) => {
+app.get("/index/:category/:id", (req, res) => {
     VidaLeve.findById(req.params.id)
         .then(foundPostage => {
             res.render("show", {postage: foundPostage});
@@ -73,7 +75,7 @@ app.get("/index/:id", (req, res) => {
 })
 
 //EDIT ROUTE 
-app.get("/index/:id/edit", (req, res) => {
+app.get("/index/:category/:id/edit", (req, res) => {
     VidaLeve.findById(req.params.id)
         .then(editPostage => {
             res.render("edit", {postage: editPostage})
@@ -82,10 +84,10 @@ app.get("/index/:id/edit", (req, res) => {
 }) 
 
 //UPDATE ROUTE
-app.put("/index/:id", (req, res) => {
+app.put("/index/:category/:id", (req, res) => {
     VidaLeve.findByIdAndUpdate(req.params.id, req.body.postage)
         .then((updatedPostage) => {
-            res.redirect("/index/" + req.params.id)
+            res.redirect("/index/" + req.params.category + "/" + req.params.id)
         })
         .catch(error => {
             res.redirect("/index")
@@ -93,7 +95,7 @@ app.put("/index/:id", (req, res) => {
 })
 
 // DELETE ROUTE
-app.delete("/index/:id", (req, res) => {
+app.delete("/index/:category/:id", (req, res) => {
     VidaLeve.findByIdAndRemove(req.params.id)
         .then(() => {
             res.redirect("/index")

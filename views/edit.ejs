@@ -2,7 +2,7 @@
 
 <div class="container bg-white py-5 card">
 <div class="container p-5 bg-white card card-hover" id="formNew">
-  <form action="/index/<%= postage._id %>?_method=PUT" method="POST">
+  <form action="/index/<%= postage.category %>/<%= postage._id %>?_method=PUT" method="POST">
     <h2>Editar Postagem</h2>
     <div class="form-group">
       <label for="">Título</label>
@@ -22,7 +22,7 @@
     </div>
     <input class="btn btn-outline-warning mb-3" type="submit" name="" id="">
   </form>
-  <form id="delete" action="/index/<%= postage._id %>?_method=DELETE" method="POST">
+  <form id="delete" action="/index/<%= postage.category %>/<%= postage._id %>?_method=DELETE" method="POST">
         <button type="submit" class="btn btn-outline-danger">Excluir Postagem</button>
   </form>
 </div>

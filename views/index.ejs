@@ -1,10 +1,22 @@
 <%- include("partials/header") %>
 
+<% function titleIndex(title) { %>
+<%    let string = "Receitas Fitness e Lifestyle!!!"; %>
+<%    if(title == "receitas") string = "Receitas"; %> 
+<%    if(title == "viagens") string = "Viagens"; %> 
+<%    if(title == "corpo_e_mente") string = "Corpo e Mente"; %> 
+<%    if(title == "acoes_sociais") string = "Ações Sociais"; %> 
+<%    return string; %>
+
+<% } %>
+
+<% var title = titleIndex(postages.title) %>
+
 <!-- Galeria -->
 <div class="container bg-white p-5 card" id="gallery">
-    <h1 class="card-title">Receitas Fitness e Lifestyle!!!</h1>
+    <h1 class="card-title"><%= title %></h1>
     <div class="card-deck">
-        <% postages.forEach((postage) => { %>
+        <% postages.postages.forEach((postage) => { %>
         <div class="col-md-6 col-lg-4 mb-4">
             <div class="card card-hover" style="height: 43rem">
                 <img class="card-img-top" src="<%= postage.image %>" alt="image">
@@ -12,7 +24,7 @@
                     <h3 class="card-title"><%= postage.title %></h3>
                     <p class="card-text pcard"><%- postage.body.substring(0, 400) %></p>
                 </div>
-                <a href="/index/<%= postage._id %>" class="d-flex flex-row-reverse pr-4 text-secondary">
+                <a href="/index/<%= postage.category %>/<%= postage._id %>" class="d-flex flex-row-reverse pr-4 text-secondary">
                     <h5 class="read">Continue lendo <i class="fas fa-angle-double-right"></i></h5>
                 </a>
                 <div class="d-flex justify-content-between p-3">
