@@ -20,7 +20,7 @@
     <!-- Menu home page -->
     <div class="container card card-hover">
         <nav id="snav" class="navbar justify-content-around navbar-expand-lg pt-3 px-0 py-0 navbar-light bg-white">
-            <a class="navbar-brand brand" href="/index"><img src="../imgs/vidalevelogo.png"></a>
+            <a class="navbar-brand brand" href="/index"><img src="/imgs/vidalevelogo.png"></a>
             <div class="navbar" id="navbarSupportedContent">
                 <ul class="navbar-nav align-items-center justify-content-end">
                     <li class="nav-item fa-3x">
@@ -31,7 +31,7 @@
                         <a class="nav-link px-lg-5 pr-xl-0" href="https://www.facebook.com/aline.daniel.35"
                             target="_blank"><i class="fab fa-facebook"></i></a>
                     </li>
-                    <img class="ml-5 d-none d-lg-block pr-xl-0" id="alineLogo" src="../imgs/favcon2.jpg" alt="Aline Logo">
+                    <img class="ml-5 d-none d-lg-block pr-xl-0" id="alineLogo" src="/imgs/favcon2.jpg" alt="Aline Logo">
                 </ul>
             </div>
         </nav>
@@ -43,18 +43,18 @@
             </button>
             <div class="collapse navbar-collapse justify-content-around" id="navbarSupportedContent">
                 <div class="nb navbar-nav mainNav">
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav" id="buttonsNav">
                         <li class="nav-item">
-                            <a class="nav-link px-auto px-lg-2 px-xl-3" href="#">RECEITAS</a>
+                            <a class="nav-link px-auto px-lg-2 px-xl-3 aMenu" href="/receitas">RECEITAS</a>
+                        </li>
+                        <li class="nav-item nbactive">
+                            <a class="nav-link px-auto px-lg-2 px-xl-3 aMenu" href="/viagens">VIAGENS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link px-auto px-lg-2 px-xl-3" href="#">VIAGENS</a>
+                            <a class="nav-link px-auto px-lg-2 px-xl-3" href="/corpo_e_mente">CORPO E MENTE</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link px-auto px-lg-2 px-xl-3" href="#">CORPO E MENTE</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link px-auto px-lg-2 px-xl-3" href="#">AÇÕES SOCIAIS</a>
+                            <a class="nav-link px-auto px-lg-2 px-xl-3" href="/acoes_sociais">AÇÕES SOCIAIS</a>
                         </li>
                         <li class="nav-item">
                             <form class="form-inline px-auto">
@@ -65,7 +65,7 @@
                         </li>
                     </ul>
                 </div>
-                <a class="px-2 ni" href="/index/new"><i  class="fas fa-sign-in-alt"></i></a>
+                <a class="px-2 ni" href="/index/new"><i  class="fas fa-hand-holding-heart"></i></a> 
             </div>
         </nav>
     </div>
