@@ -3,12 +3,9 @@
     --main-dark-color: #3f3e3e;
     --light-pink-color:  rgba(233, 129, 117, 0.4);
   }
-
-.bg-light{
-    background-color: rgba(238, 102, 102, 0.1) !important;
-}
 body {
     font-family: 'lora', sans-serif;
+    background-color: rgba(238, 102, 102, 0.1);
 }
 
 /* Pink Icons */
@@ -41,7 +38,6 @@ span.byAline {
   background: var(--main-dark-color);
   font-weight: 100;  
   border-bottom: 4px solid var(--main-pink-color);
-  box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.2);
   padding: 0;
   
 }
@@ -82,6 +78,7 @@ span.byAline {
 
 #gallery {
     padding-top: 3%;
+	background-color: white;
     padding-bottom: 3%;
 }
 
@@ -116,8 +113,8 @@ span.byAline {
 
 #footer {
     color: rgba(83, 83, 83, 0.9);
-    /* border-top: 1px solid rgba(83, 83, 83, 0.1); */
-    box-shadow: 1px 12px 10px 10px rgba(0,0,0,0.2);
+    border-top: 1px solid rgba(83, 83, 83, 0.1);
+    
 }
 #footer a {
 	color: grey;
@@ -130,8 +127,9 @@ span.byAline {
 /* Main Menu Scrolled */
 #mainNavbar.navbar.scrolled {
     background-color: var(--light-pink-color);
+    /* background:  rgba(231, 229, 229, 0.8); */
     transition: background 500ms;
-    border-bottom: 1px solid var(--light-pink-color);
+    border-bottom: 2px solid var(--light-pink-color);
       }
 
 /* Bottons of Main Menu Scrolled */
@@ -160,6 +158,7 @@ h5.read {
 
 .pcard {
     display: -webkit-box;
+    /* max-width: 200px; */
     -webkit-box-orient: vertical;
 	-webkit-line-clamp: 8;
     overflow: hidden;
@@ -167,6 +166,7 @@ h5.read {
 }
 p.pcard {
     display: -webkit-box;
+    /* max-width: 200px; */
     -webkit-box-orient: vertical;
 	-webkit-line-clamp: 5;
     overflow: hidden;
