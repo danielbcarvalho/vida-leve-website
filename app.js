@@ -26,7 +26,7 @@ const vidaLeveSchema = new mongoose.Schema({
     category: String,
     created: { type: Date, default: Date.now }
 });
-//vidaLeveSchema.index({title: 'text', body: 'text', category: 'text'});
+//schema index for search, every objects gets 'text'
 vidaLeveSchema.index({'$**': 'text'});
 
 const VidaLeve = mongoose.model("Postage", vidaLeveSchema);
@@ -45,10 +45,24 @@ app.get("/index", (req, res) => {
     });
 });
 
+//NEW ROUTE
+app.get("/index/new", (req, res) => res.render("new"));
+
+//CREATE ROUTE  
+app.post("/index", (req, res) => {
+    //create blog
+    VidaLeve.create(req.body.postage)
+        .then((newPostage) => res.redirect("/index"))
+        .catch((error) => res.render("new"))
+})
+
+ // fileContents.find({$or: [ {$text: { $search: request.searchtext }}, {metadata: request.meta}]},
+//{ score: { $meta: "textScore" } }
 //search
 app.post("/index/search", (req, res) => {
       let search = req.body.search;
-      VidaLeve.find({$text: {$search: search}},(err, postages) => { 
+        VidaLeve.find({$text: {$search: search}},(err, postages) => { 
+//      VidaLeve.find({$or: [{$text: {$search: search}}, {body: search}], {score: {$meta: "textScore"}}, (err, postages) => {
         const title = "Postagens encontradas";
         if(err) {
             console.log("log...", err);
@@ -71,16 +85,7 @@ app.get("/index/:category", (req, res) => {
     });  
 });
 
-//NEW ROUTE
-app.get("/index/new", (req, res) => res.render("new"));
 
-//CREATE ROUTE  
-app.post("/index", (req, res) => {
-    //create blog
-    VidaLeve.create(req.body.postage)
-        .then((newPostage) => res.redirect("/index"))
-        .catch((error) => res.render("new"))
-})
 
 //SHOW ROUTE    
 app.get("/index/:category/:id", (req, res) => {
