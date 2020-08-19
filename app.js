@@ -128,4 +128,4 @@ app.delete("/index/:category/:id", (req, res) => {
 })
 
 //SERVER LISTENER
-app.listen(8080, 'localhost', () => console.log("The server has started..."));
+app.listen(3000, () => console.log("The server has started..."));
