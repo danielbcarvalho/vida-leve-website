@@ -2,9 +2,10 @@ const express = require("express"),
     methodOverride = require("method-override"),
     mongoose = require("mongoose"),
     bodyParser = require("body-parser"),
-    app = express();
-    uri = "mongodb+srv://vidaleve:vidaleve@vida-leve.d9con.mongodb.net/vida_leve?retryWrites=true&w=majority"
+    uri = process.env.DATABASEURL
 
+app = express();
+    
 mongoose.connect(uri || 'mongodb://localhost:27017/vida_leve', {
     useNewUrlParser: true,
     useUnifiedTopology: true
