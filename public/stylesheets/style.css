@@ -54,6 +54,16 @@ span.byAline {
     border-bottom: none;
 }
 
+/* pagination */
+.page-link {
+    color: var(--main-pink-color);
+}
+
+.page-item.active .page-link{
+    background-color: var(--main-pink-color);
+    border-color: var(--main-pink-color);
+}
+
 .nb a:hover {
   color: white;
   background-color:  var(--main-pink-color); 	
