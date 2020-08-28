@@ -1,10 +1,14 @@
-const express = require("express"),
-    methodOverride = require("method-override"),
-    mongoose = require("mongoose"),
-    bodyParser = require("body-parser"),
-    uri = process.env.DATABASEURL
+const express = require('express'),
+    methodOverride = require('method-override'),
+    mongoose = require('mongoose'),
+    bodyParser = require('body-parser'),
+    uri = process.env.DATABASEURL,
+    Postage = require('./models/postage'),
+    indexRouter = require('./routes/index'),
+    searchRouter = require('./routes/search'),
+    postagesRouter = require('./routes/postages')
 
-app = express();
+const app = express();
     
 mongoose.connect(uri || 'mongodb://localhost:27017/vida_leve', {
     useNewUrlParser: true,
@@ -19,114 +23,10 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 
-//MONGOOSE/MODEL CONFIG
-const vidaLeveSchema = new mongoose.Schema({
-    title: String,
-    image: String,
-    body: String,
-    category: String,
-    created: { type: Date, default: Date.now }
-});
-//schema index for search, every objects gets 'text'
-vidaLeveSchema.index({'$**': 'text'});
-
-const VidaLeve = mongoose.model("Postage", vidaLeveSchema);
-//Routes
-
-//INDEX
-app.get("/", (req, res) => res.redirect("/index"));
-app.get("/index", (req, res) => {
-    VidaLeve.find({}, (err, postages) => {
-        const title = "Receitas Fitness e Lifestyle!!!";
-        if(err) {
-            console.log("log...", err);
-        } else {
-        res.render("index", {postages: {postages, title}});
-        }  
-    });
-});
-
-//NEW ROUTE
-app.get("/index/new", (req, res) => res.render("new"));
-
-//CREATE ROUTE  
-app.post("/index", (req, res) => {
-    //create blog
-    VidaLeve.create(req.body.postage)
-        .then((newPostage) => res.redirect("/index"))
-        .catch((error) => res.render("new"))
-})
-
- // fileContents.find({$or: [ {$text: { $search: request.searchtext }}, {metadata: request.meta}]},
-//{ score: { $meta: "textScore" } }
-//search
-app.post("/index/search", (req, res) => {
-      let search = req.body.search;
-        VidaLeve.find({$text: {$search: search}},(err, postages) => { 
-//      VidaLeve.find({$or: [{$text: {$search: search}}, {body: search}], {score: {$meta: "textScore"}}, (err, postages) => {
-        const title = "Postagens encontradas";
-        if(err) {
-            console.log("log...", err);
-        } else {
-        res.render("index", {postages: {postages, title}});
-        } 
-   });  
-
-});
-
-//get given category from db
-app.get("/index/:category", (req, res) => { 
-    VidaLeve.find({category: { $in: [req.params.category]}}, (err, postages) => {
-        const title = [req.params.category];
-        if(err) {
-            console.log("Categoria não encontrada", err);
-        } else {
-            res.render("index", {postages: {postages, title}});
-        }  
-    });  
-});
-
-
-
-//SHOW ROUTE    
-app.get("/index/:category/:id", (req, res) => {
-    VidaLeve.findById(req.params.id)
-        .then(foundPostage => {
-            res.render("show", {postage: foundPostage});
-        })
-        .catch((error) => res.redirect("/index"))
-})
-
-//EDIT ROUTE 
-app.get("/index/:category/:id/edit", (req, res) => {
-    VidaLeve.findById(req.params.id)
-        .then(editPostage => {
-            res.render("edit", {postage: editPostage})
-        })
-        .catch((error) => res.redirect("/index"))
-}) 
-
-//UPDATE ROUTE
-app.put("/index/:category/:id", (req, res) => {
-    VidaLeve.findByIdAndUpdate(req.params.id, req.body.postage)
-        .then((updatedPostage) => {
-            res.redirect("/index/" + req.params.category + "/" + req.params.id)
-        })
-        .catch(error => {
-            res.redirect("/index")
-        })
-})
-
-// DELETE ROUTE
-app.delete("/index/:category/:id", (req, res) => {
-    VidaLeve.findByIdAndRemove(req.params.id)
-        .then(() => {
-            res.redirect("/index")
-        })
-        .catch((error) => {
-            res.redirect("/index")
-        })
-})
+//APP ROUTES
+app.use(indexRouter)
+app.use(postagesRouter)
+app.use(searchRouter)
 
 //SERVER LISTENER
 app.listen(3000, () => console.log("The server has started..."));
