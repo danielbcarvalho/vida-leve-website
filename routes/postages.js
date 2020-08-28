@@ -1,27 +1,28 @@
 const express = require('express'),
     Postage = require('../models/postage'),
-    faker = require('faker'),
+    //faker = require('faker'),
     router = express.Router()
 
 //NEW ROUTE
 router.get("/index/new", (req, res) => res.render("new"));
 
-router.get('/index/new-faker', (req, res) => {
-     for(let i = 0; i<50; i++){
-        var postage = new Postage()   
+// //FAKER DB FILL ROUTER
+// router.get('/index/new-faker', (req, res) => {
+//      for(let i = 0; i<50; i++){
+//         var postage = new Postage()   
         
-        postage.title = faker.lorem.words(),
-        postage.image = faker.image.image(),
-        postage.body = faker.lorem.paragraphs(),
-        postage.category = faker.lorem.word(),
-        postage.created = faker.date.recent()
-        postage.save(err => {
-            if(err) throw err
-        })
-    }
+//         postage.title = faker.lorem.words(),
+//         postage.image = faker.image.image(),
+//         postage.body = faker.lorem.paragraphs(),
+//         postage.category = faker.lorem.word(),
+//         postage.created = faker.date.recent()
+//         postage.save(err => {
+//             if(err) throw err
+//         })
+//     }
     
-    res.redirect('/')
- })
+//     res.redirect('/')
+//  })
  
 //CREATE ROUTE  
 router.post("/index", (req, res) => {
