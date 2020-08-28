@@ -69,9 +69,14 @@ span.byAline {
   background-color:  var(--main-pink-color); 	
 }
 
-.aMenuActive {
-    background-color: yellow;
-  }
+/* navbar Button Active */
+/* .navbar-nav > .aMenuActive {
+    background-color: var(--main-pink-color);
+}  */
+
+.navbar-nav > .nav-item:focus-within {
+    background-color: yellow!important;
+  } 
 
 #mainNavbar.navbar a{
     color: var(--light-pink-color);
