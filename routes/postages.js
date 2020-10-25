@@ -28,7 +28,7 @@ router.get("/new/postage", (req, res) => res.render("new"));
 router.post("/index/1", (req, res) => {
     //create blog
     Postage.create(req.body.postage)
-        .then((newPostage) => res.redirect("/index1"))
+        .then((newPostage) => res.redirect("/index/1"))
         .catch((error) => res.render("new"))
 })
 
