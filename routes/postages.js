@@ -4,7 +4,7 @@ const express = require('express'),
     router = express.Router()
 
 //NEW ROUTE
-router.get("/index/new", (req, res) => res.render("new"));
+router.get("/new/postage", (req, res) => res.render("new"));
 
 // //FAKER DB FILL ROUTER
 // router.get('/index/new-faker', (req, res) => {
