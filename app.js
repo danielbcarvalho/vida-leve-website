@@ -8,8 +8,7 @@ const express = require('express'),
     searchRouter = require('./routes/search'),
     postagesRouter = require('./routes/postages')
 
-const app = express();
-    
+const app = express();  
 mongoose.connect(uri || 'mongodb://localhost:27017/vida_leve', {
     useNewUrlParser: true,
     useUnifiedTopology: true
