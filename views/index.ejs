@@ -2,23 +2,23 @@
 
 
 <% function titleIndex(title) { %>
-<%    let string = titlePage %>
-<%    if(title == "Receitas Fitness e Lifestyle!!!") return string; %>
-<%    if(title == "receitas") string = "Receitas"; %>
-<%    if(title == "viagens") string = "Viagens"; %>
-<%    if(title == "corpo_e_mente") string = "Corpo e Mente"; %>
-<%    if(title == "acoes_sociais") string = "Ações Sociais"; %>
+<%    let string = postages.title %>
+<%    if(title == "Receitas Fitness e Lifestyle!!!") return string; %> 
+<%    if(title == "receitas") string = "Receitas"; %> 
+<%    if(title == "viagens") string = "Viagens"; %> 
+<%    if(title == "corpo_e_mente") string = "Corpo e Mente"; %> 
+<%    if(title == "acoes_sociais") string = "Ações Sociais"; %> 
 <%    return string; %>
 
 <% } %>
 
-<% var title = titleIndex(titlePage) %>
+<% var title = titleIndex(postages.title) %>
 
 <!-- Galeria -->
 <div class="container bg-white p-5 card" id="gallery">
     <h1 class="card-title"><%= title %></h1>
     <div class="card-deck">
-        <% postages.forEach((postage) => { %>
+        <% postages.postages.forEach((postage) => { %>
         <div class="col-md-6 col-lg-4 mb-4">
             <div class="card card-hover" style="height: 43rem">
                 <img class="card-img-top" src="<%= postage.image %>" alt="image">
@@ -26,60 +26,18 @@
                     <h3 class="card-title"><%= postage.title %></h3>
                     <p class="card-text pcard"><%- postage.body.substring(0, 400) %></p>
                 </div>
-                <a href="/index/<%= postage.category %>/<%= postage._id %>"
-                    class="d-flex flex-row-reverse pr-4 text-secondary">
+                <a href="/index/<%= postage.category %>/<%= postage._id %>" class="d-flex flex-row-reverse pr-4 text-secondary">
                     <h5 class="read">Continue lendo <i class="fas fa-angle-double-right"></i></h5>
                 </a>
                 <div class="d-flex justify-content-between p-3">
-                    <a href="https://www.instagram.com/vidalevebyaline" target="_blank"
-                        class="btn btn-outline-primary btn-md border-0"><i
+                    <a href="https://www.instagram.com/vidalevebyaline" target="_blank" class="btn btn-outline-primary btn-md border-0"><i
                             class="iconP fas fa-share-alt-square fa-2x"></i></a>
-                    <a href="https://www.instagram.com/vidalevebyaline" target="_blank"
-                        class="btn btn-outline-danger btn-md border-0"><i class="iconP far fa-heart fa-2x"></i></a>
+                    <a href="https://www.instagram.com/vidalevebyaline" target="_blank" class="btn btn-outline-danger btn-md border-0"><i
+                            class="iconP far fa-heart fa-2x"></i></a>
                 </div>
             </div>
         </div>
         <% }) %>
     </div>
-    <% if (pages > 0) { %>
-    <nav class="pt-5" aria-label="...">
-        <ul class="pagination justify-content-end">
-            <% if (current == 1) { %>
-            <li class="page-item disabled">
-                <a class="page-link">
-                    <span aria-hidden="true">&laquo;</span>
-                    <span class="sr-only">Anterior</span>
-                </a>
-            </li>
-            <% } else { %>
-            <li class='page-item'><a class="page-link" href="/index/1">&laquo;</a></li>
-            <% } %>
-            <% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %>
-            <% if (i !== 1) { %>
-            <li class="page-item disabled"><a class="page-link">...</a></li>
-            <% } %>
-            <% for (; i <= (Number(current) + 4) && i <= pages; i++) { %>
-            <% if (i == current) { %>
-            <li class="page-item active"><a class="page-link"><%= i %></a></li>
-            <% } else { %>
-            <li class="page-item"><a class="page-link" href="/index/<%= i %>"><%= i %></a></li>
-            <% } %>
-            <% if (i == Number(current) + 4 && i < pages) { %>
-            <li class="page-item disabled"><a class="page-link">...</a></li>
-            <% } %>
-            <% } %>
-            <% if (current == pages) { %>
-            <li class="page-item disabled"><a class="page-link">&raquo;</a></li>
-            <% } else { %>
-                <li class="page-item">
-                    <a class="page-link" href="/index/<%= pages %>">
-                        <span aria-hidden="true">&raquo;</span>
-                        <span class="sr-only">Última</span>
-                    </a>
-                </li>
-            <% } %>
-        </ul>
-    </nav>
-    <% } %>
 </div>
 <%- include("partials/footer") %>
