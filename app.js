@@ -17,6 +17,22 @@ mongoose.connect(uri || 'mongodb://localhost:27017/vida_leve', {
     .then(() => console.log('Connected to Atlas Mongodb!'))
     .catch(error => console.log(error.message));
 
+//** Newsletter */
+import mailchimp from "@mailchimp/mailchimp_marketing";
+
+mailchimp.setConfig({
+  apiKey: "cd3090dd888347c9805ed6cab7bf4146-us2",
+  server: "us2",
+});
+
+async function run() {
+  const response = await mailchimp.ping.get();
+  console.log(response);
+}
+
+run();
+
+
 //APP CONFIG
 app.set("view engine", "ejs");
 app.use(express.static("public"));
@@ -27,6 +43,7 @@ app.use(methodOverride("_method"));
 app.use(indexRouter)
 app.use(postagesRouter)
 app.use(searchRouter)
+
 
 //SERVER LISTENER
 app.listen(3000, () => console.log("The server has started..."));
