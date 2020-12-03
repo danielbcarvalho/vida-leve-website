@@ -15,7 +15,6 @@ Website about wellness, healthy recipes, travel and social actions..
 
 ## Features
 
-* Add likes
 * Create, edit and delete posts from a login user
 
 ## Installation - npm
