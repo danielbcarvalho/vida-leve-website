@@ -15,7 +15,7 @@ Website about wellness, healthy recipes, travel and social actions..
 
 ## Features
 
-* Create, edit and delete posts from a login user
+* Create, edit and delete posts from a login user.
 
 ## Installation - npm
 * express
