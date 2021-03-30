@@ -49,4 +49,6 @@ app.use(postagesRouter);
 app.use(searchRouter);
 
 //SERVER LISTENER
-app.listen(3000, () => console.log("The server has started..."));
+app.listen(process.env.PORT || 3000, () =>
+  console.log("The server has started...")
+);
